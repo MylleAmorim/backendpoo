@@ -1,6 +1,6 @@
 package com.backendpoo.model;
 
-public class ContaBancaria {
+public abstract class ContaBancaria {
 
 
     private String  agencia;
@@ -45,6 +45,17 @@ public class ContaBancaria {
     }
 
 
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
 
+    public void sacar(double valor) {
+        this.saldo -= valor;
 
+    }
+
+    public void transferir(double valor, ContaBancaria destino) {
+        this.saldo -= valor;
+        destino.depositar(valor);
+    }
 }
