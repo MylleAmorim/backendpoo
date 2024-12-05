@@ -3,6 +3,10 @@ package com.backendpoo;
 import com.backendpoo.model.ContaBancaria;
 import com.backendpoo.model.ContaCorrente;
 import com.backendpoo.model.ContaPoupanca;
+import com.backendpoo.model.Movimentacao;
+import com.backendpoo.utils.DataUtil;
+
+import static com.backendpoo.utils.DataUtil.*;
 
 public class App {
 
@@ -32,6 +36,28 @@ public class App {
 
         System.out.println("Saldo atual de R$" + conta.getSaldo());
         System.out.println();
+
+        System.out.println(conta2.getDataAbertura());
+
+        var f1 = converterDateParaDataEHora(conta2.getDataAbertura());
+        var f2 = converterDateParaData(conta2.getDataAbertura());
+        var f3 = converterDateParaHora(conta2.getDataAbertura());
+        System.out.println(f1);
+        System.out.println(f2);
+        System.out.println(f3);
+
+        conta.imprimirExtrato();
+        conta2.imprimirExtrato();
+
+        Movimentacao movimentacao = new Movimentacao("Saque",100.0);
+        System.out.println(movimentacao);
+
+
+
+
+
+
+
 
 
 
